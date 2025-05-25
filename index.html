@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Red Circle Joker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+  <div class="logo">
+    <img src="images/logo.png" alt="LOGO图" />
+  </div>
+
+  <div class="tagline" id="tagline"></div>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/slide1.png" alt="Slide 1" /></div>
+      <div class="swiper-slide"><img src="images/slide2.png" alt="Slide 2" /></div>
+      <div class="swiper-slide"><img src="images/slide3.png" alt="Slide 3" /></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div class="button-area">
+    <a href="https://www.xiaohongshu.com" target="_blank" class="red-button">小红书主页</a>
+    <a href="javascript:void(0);" class="green-button" style="margin-left: 12px;" onclick="toggleQR()">微信公众号</a>" onclick="toggleQR()">微信号</a>
+  </div>
+
+  <!-- 二维码弹窗 -->
+  <div id="qr-popup" class="qr-popup">
+    <div class="qr-box">
+      <img src="images/wechat-qr.png" alt="微信公众号二维码" />
+      <p style="margin-top: 8px;">扫码添加微信</p>
+      <button onclick="toggleQR()">关闭</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>运营方：Red Circle Joker</p>
+    <p>联系邮箱：hello@joker.red</p>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
