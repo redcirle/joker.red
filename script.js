@@ -1,0 +1,78 @@
+const tagline = document.getElementById("tagline");
+
+const charArray = ["中", "国", "未", "赢", "够", "，", "j", "o", "k", "e", "r", ".", "r", "e","d"," ", "未", "赢", "够"
+];
+
+let index = 0;
+
+function typeWriter() {
+  if (index < charArray.length) {
+    tagline.innerHTML += charArray[index];
+    index++;
+    setTimeout(typeWriter, 200);
+  } else {
+    setTimeout(() => {
+      tagline.innerHTML = "";
+      index = 0;
+      typeWriter();
+    }, 2000);
+  }
+}
+
+window.onload = () => {
+  typeWriter();
+
+  const images = document.querySelectorAll(".swiper-slide img");
+  let loadedCount = 0;
+
+  images.forEach((img) => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          initSwiper();
+        }
+      };
+    }
+  });
+
+  // 如果所有图片都已经加载
+  if (loadedCount === images.length) {
+    initSwiper();
+  }
+
+  function initSwiper() {
+    new Swiper(".swiper-container", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 150,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+};
+function toggleQR() {
+  const popup = document.getElementById("qr-popup");
+  popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+}
+function toggleWeChatPublicQR() {
+  const popup = document.getElementById("wechat-public-qr-popup");
+  popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+}
