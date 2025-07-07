@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="./">
+  <title>Red Circle Joker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+  <div class="logo">
+    <img src="images/logo.png" alt="LOGO图" />
+  </div>
+
+  <div class="tagline" id="tagline"></div>
+
+  <div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/slide1.png" alt="Slide 1" /></div>
+    <div class="swiper-slide"><img src="images/slide2.png" alt="Slide 2" /></div>
+    <div class="swiper-slide"><img src="images/slide3.png" alt="Slide 3" /></div>
+    <div class="swiper-slide"><img src="images/slide4.png" alt="Slide 4" /></div> <!-- 建议添加第四张 -->
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+ <div class="button-area">
+  <!-- 第一排按钮 -->
+  <div class="button-row">
+    <a href="javascript:void(0)" onclick="confirmAndGoXHS()" class="red-button">小红书主页</a>
+    <a href="javascript:void(0)" onclick="toggleQR()" class="green-button">微信表情包</a>
+    <a href="javascript:void(0)" onclick="toggleWeChatPublicQR()" class="blue-button">微信公众号</a>
+  </div>
+
+  <!-- 第二排按钮 -->
+  <div class="button-row">
+    <a href="javascript:void(0)" onclick="confirmAndMail()" class="purple-striped-button">联系我们</a>
+    <a href="javascript:void(0)" onclick="toggleSecondQR()" class="green-striped-button">微信表情包</a>
+  </div>
+</div>
+
+  <!-- 微信二维码弹窗 -->
+  <div id="qr-popup" class="qr-popup">
+    <div class="qr-box">
+      <img src="images/wechat_qr.png" alt="微信二维码" />
+      <button onclick="toggleQR()">关闭</button>
+    </div>
+  </div>
+
+  <!-- 微信公众号二维码弹窗 -->
+  <div id="wechat-public-qr-popup" class="qr-popup">
+    <div class="qr-box">
+    <img src="images/wechat_public_qr.png" alt="微信公众号二维码" />
+    <button onclick="toggleWeChatPublicQR()">关闭</button>
+  </div>
+</div>
+
+   <div id="second-qr-popup" class="qr-popup">
+     <div class="qr-box">
+     <img src="images/emoji_pack2_qr.png" alt="第二套表情包二维码" />
+     <button onclick="toggleSecondQR()">关闭</button>
+  </div>
+</div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
